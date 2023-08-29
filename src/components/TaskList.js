@@ -20,6 +20,8 @@ const TaskList = () => {
             <div className='grid gap-4'>
               <span className="mb-2">Pull the code from git</span>
               <span className="mb-2">2023-09-01</span>
+              <span className="mb-2">Get to the gym</span>
+              <span className="mb-2">2023-08-30</span>
             </div>
           </div> 
         )}
