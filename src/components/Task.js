@@ -14,10 +14,10 @@ const Task = ({task}) => {
         checked={task.completed}
         onChange={() => toggleTaskCompletion(task.id)}
       />
-            <button onClick={() => removeTask(task.id)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2">
+            <button onClick={() => findItem(task.id)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2">
                 Edit
             </button>
-            <button  onClick={() => findItem(task.id)} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+            <button  onClick={() => removeTask(task.id)}  className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
                 Delete
             </button>
         </div>
