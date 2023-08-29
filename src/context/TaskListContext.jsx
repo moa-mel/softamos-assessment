@@ -1,7 +1,9 @@
 import React, { createContext, useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
+
 export const TaskListContext = createContext();
+
 
 const TaskListContextProvider = (props) => {
     
@@ -29,6 +31,9 @@ const TaskListContextProvider = (props) => {
         const item = tasks.find(task => task.id === id );
         setEditItem(item);
     }
+    const clearList = () => {
+        setTasks([]);
+    }
 
     const editTask = ( title, dueDate, id ) => {
         const newTasks = tasks.map(task => task.id === id ? { title, dueDate, id }: task);
@@ -44,7 +49,7 @@ const TaskListContextProvider = (props) => {
         );
       };
 
-    return <TaskListContext.Provider value={{tasks, addTask, removeTask, findItem, editItem, editTask, toggleTaskCompletion }}>{props.children}</TaskListContext.Provider>
+    return <TaskListContext.Provider value={{tasks, addTask, removeTask, findItem, editItem, editTask, toggleTaskCompletion, clearList }}>{props.children}</TaskListContext.Provider>
 };
 
 export default TaskListContextProvider;

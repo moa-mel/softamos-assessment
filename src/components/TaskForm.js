@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from 'react'
 import { TaskListContext } from '../context/TaskListContext';
 
 const TaskForm = () => {
-    const { addTask, editItem, editTask } = useContext(TaskListContext);
+    const { addTask, editItem, editTask, clearList } = useContext(TaskListContext);
     const [title, setTitle] = useState('');
     const [dueDate, setDueDate] = useState('');
 
@@ -59,6 +59,12 @@ const TaskForm = () => {
         type="submit"
         className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"'>
          Add Task
+      </button>
+      <button
+        type="submit"
+        onClick={() => clearList()}
+        className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"'>
+         Clear out
       </button>
             </div>
         </form>
