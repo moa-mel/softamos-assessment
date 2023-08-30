@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState} from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 
@@ -8,15 +8,9 @@ const TaskListContextProvider = (props) => {
     const initialTasks = [
         { title: 'Task 1', dueDate: '2023-08-31', id: uuidv4() },
         { title: 'Task 2', dueDate: '2023-09-15', id: uuidv4() },
-        // Add more initial tasks as needed
       ];
       
-      /*const localTasks = JSON.parse(localStorage.getItem('tasks'));*/
       const [tasks, setTasks] = useState(initialTasks || []);
-
-    /*useEffect(() => {
-        localStorage.setItem('tasks', JSON.stringify(tasks))
-    }, [tasks]) */
 
     const [editItem, setEditItem] = useState(null);
 

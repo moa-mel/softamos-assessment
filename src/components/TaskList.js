@@ -1,11 +1,9 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { TaskListContext } from '../context/TaskListContext';
 import Task from './Task';
-import DefaultTask from './DefaultTask';
 
 const TaskList = () => {
   const { tasks } = useContext(TaskListContext);
-  const [isCompleted, setIsCompleted] = useState(false);
 
   return (
     <div className='max-w-md mx-auto px-4 py-8'>
